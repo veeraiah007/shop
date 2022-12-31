@@ -1,0 +1,72 @@
+{% extends 'suba/layout/main.html' %}
+{%block title%}
+Registration | online shopping
+{%endblock title%}
+{%block content%}
+<div class="image_bg">
+<div class="container" style="margin-top: 10PX;">
+    <div class="row">
+        <div class="col-12">
+            <h4 class="mb-3"> User Contact Page </h4>
+            <hr style="border-color: #b8bfc2;">
+        </div>
+    </div>
+</div>
+<section class="py-5 my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <form method="POST">
+                {% csrf_token %}
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="exampleInputPassword1" name="name" placeholder="enter a name">
+                      </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" name='email' aria-describedby="emailHelp" placeholder="enter a email">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Body</label>
+                        <textarea name="body" class="form-control"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+            </div>
+        </div>
+    </div>
+</section>        
+
+
+<div class="container" style="margin-top: -30PX;">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="kd-3">About</h1>
+            <p class="p-2">Giving your car the service it deserves, Maruti Suzuki Service has an extensive service network that spans across more than 1800 cities in India, making it easily accessible for customers.
+                Book a service appointment for your car at your nearest Maruti Suzuki authorized service centre, and avail numerous benefits like quality service by certified and expert technicians, 
+                genuine Maruti Suzuki parts and accessories, transparent evaluation and technology-driven solutions.
+                With stringent sanitisation and quality checks in place, we take good care of your car at Maruti Suzuki Service. 
+                Explore our range of services like Extended warranty, Roadside assistance to know more.</p>
+        
+            <h2 class="kd-3">WHY CHOOSE US?</h2>
+            <p class="p-2">Booking a service appointment with Maruti Suzuki Service allows you to access a world of benefits. At every authorised Maruti Suzuki Service Station, we have employed a team of highly 
+                trained and experienced technicians who follow strict guidelines to ensure that your vehicle receives proper service. This ensures safety as well as quality. Apart from this, 
+                you can rest be assured that only genuine parts and accessories will be used in your car. You can also use the service cost calculator to get an estimate 
+                for how much your next service will cost and post that book your service appointment here.
+            </div>
+    </div>
+</div>
+</div>
+<style>
+
+.image_bg{
+    background-color: skyblue;
+}
+.kd-3{
+    color: black;
+}
+.p-2{
+    color: red;
+}
+</style>
+{%endblock content%}

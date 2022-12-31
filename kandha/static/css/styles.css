@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&display=swap');
+
+html{
+    font-size: 15px;
+}
+body{
+    font-family:'Barlow', sans-serif ;
+}
+a{
+    text-decoration: none;
+}
+
+.navbar{
+    background-color: blue;
+    font-size: 18px;  
+}
+.nav-link{
+    color: white;
+}
+.nav-link:hover{
+    color: rgb(255, 0, 238);
+}
+
+.btn{
+    color:white;
+}
+.navbar-brand{
+    color: rgb(218, 235, 25);
+}
+.carousel-item{
+    height: 80vh;
+    object-fit: cover;
+    object-position: top;
+    overflow: hidden;
+}
+.mb-3{
+    text-align: center;
+    color: goldenrod;
+}
+.col-6{
+    justify-content: center;
+    align-items: center;
+    margin-left: 40%;
+    margin-top: -5%;
+}
+.form-control{
+    width: 50%;
+    margin: 2px;
+    border: none;
+    background: aliceblue;
+}
+.form-label{
+    font-weight: bold;
+    color: yellow;
+}
+.login_background {
+    margin-top: -65px;
+    width: 100%;
+    background-image: url("3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+}
+

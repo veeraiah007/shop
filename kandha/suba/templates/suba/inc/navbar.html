@@ -1,0 +1,46 @@
+
+  <nav class="navbar navbar-expand-lg navbar-drak bg-drak">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <img src="static/image/13123.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top"> Service
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto  ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{% url 'home' %}"><i class="fa fa-home"></i>Home</a>
+          </li>
+          {% if request.user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="#" tabindex="-1">{{request.user}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}" tabindex="-1">Logout</a>
+          </li>
+          {%else%}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}" tabindex="-1"><i class="fa fa-sign-in"></i>Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'register' %}" tabindex="-1"><i class="fa fa-user"></i>Register</a>
+          </li>
+          {% endif %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'collections' %}" tabindex="-1"><i class="fa fa-cube"></i>Collection</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}" tabindex="-1"><i class="fa fa-phone"></i>About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'cart' %}" tabindex="-1"><i class="fa fa-cube"></i>Cart</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>

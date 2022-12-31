@@ -1,0 +1,36 @@
+{%extends 'suba/layout/main.html'%}
+{%block title%}
+ONLINE shopping
+{%endblock title%}
+
+{%block content%}
+
+<section class="bg-light py-4 my-5" >
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h4 class="mb-3">Catagories</h4>
+                <hr style="border-color: #b8bfc2;">
+            </div>
+                {% for item in Catagory %}
+            <div class="col-md-4 col-lg-3">
+                <div class="card my-3">
+                    <img src="{{ item.image.url }}" class="card-image-top"alt="Categories" style="height:150px;">
+                    <a href="{% url 'collections' item.name %}">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">{{item.name}}</h5>
+                        <p class="card-text">{{item.number}}</p>
+                    </div>
+                    </a>
+                </div>
+            </div>
+                {% endfor %}
+        </div>
+    </div>
+</section>
+
+    
+
+    
+
+{%endblock content%}

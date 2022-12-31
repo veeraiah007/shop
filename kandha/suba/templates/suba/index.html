@@ -1,0 +1,52 @@
+{%extends 'suba/layout/main.html'%}
+{%block title%}
+KUMAR
+{%endblock title%}
+
+{%block content%}
+<marquee direction="left" behavior="scroll"  onMouseDown="this.stop()" onMouseOver="this.stop()" onMouseMove="this.stop()" onMouseOut="this.start()">HAI WELCOME TO SERVICE CENTER</marquee>
+{%include 'suba/inc/slider.html'%}
+<div class="container" style="margin-top: 70PX;">
+    <h1>OUR SERVICE</h1>
+    <div class="row">
+        <div class="col-12">
+            <img src="static\image\3.jpg" width="250px" height="150vh">
+            <p><a href="{% url 'exterior' %}">exterior work</a></p>
+        </div>
+        <div class="col-12">
+            <img src="static\image\7.jpg" width="250px" height="150vh">
+            <p><a href="{% url 'WheelAligment' %}">Wheel Aligment</a></p>
+        </div>
+        <div class="col-12">
+            <img src="static\image\5.jpg" width="250px" height="150vh">
+            <p><a href="{% url 'WaterWash' %}">Water Wash</a></p>
+        </div>
+        <div class="col-12">
+            <img src="static\image\2.jpg" width="250px" height="150vh">
+            <p><a href="{% url 'Enginework' %}">Engine work</a></p>
+        </div>
+        <div class="col-12">
+            <img src="static\image\9.jpg" width="250px" height="150vh">
+            <p><a href="{% url 'interior' %}">Interior work</a></p>
+        </div>    
+    </div>
+</div>
+<style>
+* {
+    box-sizing: border-box;
+  }
+  
+  .col-12 {
+    float: left;
+    width: 25%;
+    padding: 5px;
+  }
+  
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+</style>
+{%endblock content%}

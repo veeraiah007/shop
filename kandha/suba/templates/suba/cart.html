@@ -1,0 +1,57 @@
+{% extends 'suba/layout/main.html' %}
+{%block title%}
+Registeration | online shopping
+{%endblock title%} 
+{%block content%}
+<section class="bg-light py-4 my-5" >
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h4 class=" ms-auto"> Services</h4>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="btn btn-primary me-md-2" type="button">print</button>
+                  </div>
+                <hr style="border-color: #b8bfc2;">
+            </div>
+
+            <table class="">
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th></th>
+                    <th>Unit</th>
+                    <th>Amount</th>
+                    <th>Remove</th>
+                </tr>
+                {% for item in cart %}
+                <tr>
+                    <td><img src="{{item.service.service_image.url}}" height="75px"alt="{{item.service.name}}"></td>
+                    <td>{{item.service.name}}</td>
+                    <td></td> 
+                    <td>{{item.service.service_cost | stringformat:'d'}}</td>
+                    <td class="amt">{{item.total_cost | stringformat:'d'}}</td>
+                    <td><a href="{% url 'remove_cart' item.id %}" onclick="return confirm('Are You Sure?to Remove')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i>Remove</a></td>
+
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td colspan="2"><b>Total Amount</b></td>
+                    <td id="net">0</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
+
+<script>
+    const nodes=document.querySelectorAll('.amt');
+    const arr=Array.from(nodes)
+    const res=arr.reduce((acc ,curr) => {
+        return acc +=Number (curr.textContent)
+    },0);
+    document.getElementById("net").innerHTML="Rs :"+res;
+</script>
+
+{% endblock content %}
